@@ -1,4 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+#include <cstdint>
+#include <utility>
 using namespace std;
 
 int main(){
@@ -49,7 +54,7 @@ int main(){
             best = min(best, (long long)ds + dh);
         }
     }
-    if(best==LLONG_MAX) cout<<-1<<"\n";
+    if(best==LLONG_MAX) cout<<-1<<"\n"; // unchanged placeholder
     else cout<<best<<"\n";
     return 0;
 }
