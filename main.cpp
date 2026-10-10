@@ -22,6 +22,7 @@ int main(){
             else if(grid[i][j]==4) umbrellas.emplace_back(i,j);
         }
     }
+
     const int INF = 1e9;
     auto bfs = [&](pair<int,int> src){
         vector<vector<int>> dist(m, vector<int>(n, INF));
@@ -32,11 +33,11 @@ int main(){
         int dirs[4][2]={{1,0},{-1,0},{0,1},{0,-1}};
         while(!q.empty()){
             auto cur = q.front(); q.pop();
-            int x = cur.first; int y = cur.second;
-            for(auto &d:dirs){
-                int nx=x+d[0], ny=y+d[1];
+            int x = cur.first, y = cur.second;
+            for(auto &d: dirs){
+                int nx = x+d[0], ny = y+d[1];
                 if(nx<0||nx>=m||ny<0||ny>=n) continue;
-                if(grid[nx][ny]==1) continue; // blocked
+                if(grid[nx][ny]==1) continue;
                 if(dist[nx][ny]==INF){
                     dist[nx][ny]=dist[x][y]+1;
                     q.emplace(nx,ny);
